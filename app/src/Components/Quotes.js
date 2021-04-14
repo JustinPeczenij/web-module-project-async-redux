@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuote } from '../store/actions';
 
 
 function Quotes(props) {
+    useEffect(()=> {
+        let msg = new SpeechSynthesisUtterance();
+        msg.text = props.quote;
+        window.speechSynthesis.speak(msg)
+    }, [props.quote])
     return (
         <div className='quotes-container'>
             <button onClick={() => props.fetchQuote()}>What Yeezy Said?</button>
@@ -13,6 +19,8 @@ function Quotes(props) {
         </div>
     )
 }
+
+
 
 const mapStateToProps = (state) => {
     return {
