@@ -4,11 +4,17 @@ import { fetchQuote } from '../store/actions';
 
 
 function Quotes(props) {
+
     useEffect(()=> {
         let msg = new SpeechSynthesisUtterance();
+        let voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[0]
+        msg.pitch = 1.5
+        msg.rate = 1.5
         msg.text = props.quote;
         window.speechSynthesis.speak(msg)
     }, [props.quote])
+
     return (
         <div className='quotes-container'>
             <button onClick={() => props.fetchQuote()}>What Yeezy Said?</button>
