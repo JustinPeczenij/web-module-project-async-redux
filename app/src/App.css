@@ -5,6 +5,7 @@
 
 .App-logo {
   height: 20vmin;
+  margin: 0 5% 0 5%;
   pointer-events: none;
 }
 
@@ -34,4 +35,25 @@
 
 .quotes-container {
   height:80vmin;
+}
+
+.quote-container {
+  font-size: 2rem;
+  margin: 4%;
+  padding: 2% 20%;
+  color:white;
+  box-shadow: 20px white;
+}
+
+.by-kanye {
+  display:flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  color: #dbdbdb;
+  font-size: 1.6rem;
+}
+
+button {
+  padding: 1% 2%;
+  font-size: 1.4rem;
 }
